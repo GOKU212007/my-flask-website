@@ -129,8 +129,22 @@ def anime():
         <title>Anime - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{ background-color: #0f0f1a; color: white; }}
-            .navbar {{ background-color: #1a1a2e !important; }}
+            body { background-color: #0f0f1a; color: white; }
+            .navbar { background-color: #1a1a2e !important; }
+            .anime-card {
+                background-color: #1a1a2e;
+                border-radius: 12px;
+                overflow: hidden;
+                transition: transform 0.3s;
+            }
+            .anime-card:hover {
+                transform: translateY(-8px);
+            }
+            .anime-img {
+                height: 280px;
+                object-fit: cover;
+                width: 100%;
+            }
         </style>
     </head>
     <body>
@@ -145,10 +159,92 @@ def anime():
                 </div>
             </div>
         </nav>
-        <div class="container my-5 text-center">
-            <h1 class="text-danger">Anime Section</h1>
-            <p class="lead">Yahaan aap popular anime list add kar sakte hain.</p>
-            <a href="/" class="btn btn-outline-light mt-3">Back to Home</a>
+
+        <div class="container my-5">
+            <h1 class="text-center text-danger mb-4">Popular Anime</h1>
+            <div class="row g-4">
+
+                <div class="col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="anime-img" alt="Naruto">
+                        <div class="p-3">
+                            <h5>Naruto</h5>
+                            <p class="small text-muted">Action, Adventure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1208/94745.jpg" class="anime-img" alt="One Piece">
+                        <div class="p-3">
+                            <h5>One Piece</h5>
+                            <p class="small text-muted">Adventure, Fantasy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" class="anime-img" alt="Demon Slayer">
+                        <div class="p-3">
+                            <h5>Demon Slayer</h5>
+                            <p class="small text-muted">Action, Supernatural</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" class="anime-img" alt="Jujutsu Kaisen">
+                        <div class="p-3">
+                            <h5>Jujutsu Kaisen</h5>
+                            <p class="small text-muted">Action, Dark Fantasy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" class="anime-img" alt="Death Note">
+                        <div class="p-3">
+                            <h5>Death Note</h5>
+                            <p class="small text-muted">Mystery, Thriller</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/5/73199.jpg" class="anime-img" alt="Attack on Titan">
+                        <div class="p-3">
+                            <h5>Attack on Titan</h5>
+                            <p class="small text-muted">Action, Drama</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/3/72046.jpg" class="anime-img" alt="Tokyo Ghoul">
+                        <div class="p-3">
+                            <h5>Tokyo Ghoul</h5>
+                            <p class="small text-muted">Action, Horror</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/11/39717.jpg" class="anime-img" alt="Hunter x Hunter">
+                        <div class="p-3">
+                            <h5>Hunter x Hunter</h5>
+                            <p class="small text-muted">Adventure, Fantasy</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </body>
     </html>
@@ -163,8 +259,8 @@ def manga():
         <title>Manga - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{ background-color: #0f0f1a; color: white; }}
-            .navbar {{ background-color: #1a1a2e !important; }}
+            body { background-color: #0f0f1a; color: white; }
+            .navbar { background-color: #1a1a2e !important; }
         </style>
     </head>
     <body>
@@ -197,8 +293,8 @@ def manhwa():
         <title>Manhwa - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{ background-color: #0f0f1a; color: white; }}
-            .navbar {{ background-color: #1a1a2e !important; }}
+            body { background-color: #0f0f1a; color: white; }
+            .navbar { background-color: #1a1a2e !important; }
         </style>
     </head>
     <body>
@@ -243,8 +339,8 @@ def contact():
         <title>Contact - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{ background-color: #0f0f1a; color: white; }}
-            .navbar {{ background-color: #1a1a2e !important; }}
+            body { background-color: #0f0f1a; color: white; }
+            .navbar { background-color: #1a1a2e !important; }
         </style>
     </head>
     <body>
