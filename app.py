@@ -45,12 +45,12 @@ def home():
                             url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200') center/cover;
                 padding: 100px 0;
                 text-align: center;
-            }
+            }}
             .card {{
                 background-color: #1a1a2e;
                 border: none;
                 transition: transform 0.3s;
-            }
+            }}
             .card:hover {{ transform: translateY(-10px); }}
             .section-title {{ color: #e94560; margin-bottom: 30px; }}
         </style>
@@ -128,7 +128,10 @@ def anime():
     <head>
         <title>Anime - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>body { background-color: #0f0f1a; color: white; } .navbar { background-color: #1a1a2e !important; }</style>
+        <style>
+            body {{ background-color: #0f0f1a; color: white; }}
+            .navbar {{ background-color: #1a1a2e !important; }}
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -145,7 +148,6 @@ def anime():
         <div class="container my-5 text-center">
             <h1 class="text-danger">Anime Section</h1>
             <p class="lead">Yahaan aap popular anime list add kar sakte hain.</p>
-            <p>(Abhi basic page hai. Baad mein cards aur details add karenge.)</p>
             <a href="/" class="btn btn-outline-light mt-3">Back to Home</a>
         </div>
     </body>
@@ -160,7 +162,10 @@ def manga():
     <head>
         <title>Manga - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>body { background-color: #0f0f1a; color: white; } .navbar { background-color: #1a1a2e !important; }</style>
+        <style>
+            body {{ background-color: #0f0f1a; color: white; }}
+            .navbar {{ background-color: #1a1a2e !important; }}
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -191,7 +196,10 @@ def manhwa():
     <head>
         <title>Manhwa - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>body { background-color: #0f0f1a; color: white; } .navbar { background-color: #1a1a2e !important; }</style>
+        <style>
+            body {{ background-color: #0f0f1a; color: white; }}
+            .navbar {{ background-color: #1a1a2e !important; }}
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -234,7 +242,10 @@ def contact():
     <head>
         <title>Contact - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>body{background:#0f0f1a;color:white;} .navbar{background:#1a1a2e!important;}</style>
+        <style>
+            body {{ background-color: #0f0f1a; color: white; }}
+            .navbar {{ background-color: #1a1a2e !important; }}
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -280,7 +291,9 @@ def signup():
     <head>
         <title>Signup - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>body{{background:#0f0f1a;color:white;}}</style>
+        <style>
+            body {{ background-color: #0f0f1a; color: white; }}
+        </style>
     </head>
     <body>
         <div class="container mt-5">
@@ -323,7 +336,9 @@ def login():
     <head>
         <title>Login - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>body{{background:#0f0f1a;color:white;}}</style>
+        <style>
+            body {{ background-color: #0f0f1a; color: white; }}
+        </style>
     </head>
     <body>
         <div class="container mt-5">
