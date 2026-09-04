@@ -38,27 +38,31 @@ def home():
         <title>AnimeHub - Anime, Manga & Manhwa</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{ background-color: #0f0f1a; color: white; }}
-            .navbar {{ background-color: #1a1a2e !important; }}
+            body {{ background-color: #0b0b13; color: white; font-family: 'Segoe UI', sans-serif; }}
+            .navbar {{ background-color: #12121f !important; }}
             .hero {{
-                background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                            url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200') center/cover;
-                padding: 100px 0;
+                background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                            url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1400') center/cover;
+                padding: 110px 0;
                 text-align: center;
             }}
             .card {{
-                background-color: #1a1a2e;
+                background-color: #16162a;
                 border: none;
-                transition: transform 0.3s;
+                border-radius: 14px;
+                transition: all 0.3s ease;
             }}
-            .card:hover {{ transform: translateY(-10px); }}
-            .section-title {{ color: #e94560; margin-bottom: 30px; }}
+            .card:hover {{
+                transform: translateY(-8px);
+                box-shadow: 0 12px 25px rgba(233, 69, 96, 0.25);
+            }}
+            .section-title {{ color: #e94560; margin-bottom: 30px; font-weight: 600; }}
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="/">AnimeHub</a>
+                <a class="navbar-brand fw-bold fs-4" href="/">AnimeHub</a>
                 <div class="d-flex gap-3">
                     <a class="nav-link text-white" href="/">Home</a>
                     <a class="nav-link text-white" href="/anime">Anime</a>
@@ -74,12 +78,12 @@ def home():
 
         <div class="hero">
             <div class="container">
-                <h1 class="display-3 fw-bold">Welcome to AnimeHub</h1>
-                <p class="lead">Your ultimate destination for Anime, Manga & Manhwa</p>
+                <h1 class="display-3 fw-bold mb-3">Welcome to AnimeHub</h1>
+                <p class="lead mb-4">Your ultimate destination for Anime, Manga & Manhwa</p>
                 {welcome}
-                <div class="mt-4">
-                    <a href="/anime" class="btn btn-danger btn-lg me-2">Explore Anime</a>
-                    <a href="/manga" class="btn btn-outline-light btn-lg">Explore Manga</a>
+                <div class="mt-3">
+                    <a href="/anime" class="btn btn-danger btn-lg me-2 px-4">Explore Anime</a>
+                    <a href="/manga" class="btn btn-outline-light btn-lg px-4">Explore Manga</a>
                 </div>
             </div>
         </div>
@@ -91,8 +95,8 @@ def home():
                     <div class="card text-white h-100">
                         <div class="card-body text-center p-4">
                             <h3>Anime</h3>
-                            <p>Watch and discover the best anime series and movies.</p>
-                            <a href="/anime" class="btn btn-danger">View Anime</a>
+                            <p class="text-secondary">Watch and discover the best anime series and movies.</p>
+                            <a href="/anime" class="btn btn-danger mt-2">View Anime</a>
                         </div>
                     </div>
                 </div>
@@ -100,8 +104,8 @@ def home():
                     <div class="card text-white h-100">
                         <div class="card-body text-center p-4">
                             <h3>Manga</h3>
-                            <p>Read popular Japanese manga online.</p>
-                            <a href="/manga" class="btn btn-danger">View Manga</a>
+                            <p class="text-secondary">Read popular Japanese manga online.</p>
+                            <a href="/manga" class="btn btn-danger mt-2">View Manga</a>
                         </div>
                     </div>
                 </div>
@@ -109,8 +113,8 @@ def home():
                     <div class="card text-white h-100">
                         <div class="card-body text-center p-4">
                             <h3>Manhwa</h3>
-                            <p>Explore Korean manhwa and webtoons.</p>
-                            <a href="/manhwa" class="btn btn-danger">View Manhwa</a>
+                            <p class="text-secondary">Explore Korean manhwa and webtoons.</p>
+                            <a href="/manhwa" class="btn btn-danger mt-2">View Manhwa</a>
                         </div>
                     </div>
                 </div>
@@ -129,28 +133,48 @@ def anime():
         <title>Anime - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body { background-color: #0f0f1a; color: white; }
-            .navbar { background-color: #1a1a2e !important; }
+            body {
+                background-color: #0b0b13;
+                color: white;
+                font-family: 'Segoe UI', sans-serif;
+            }
+            .navbar {
+                background-color: #12121f !important;
+            }
             .anime-card {
-                background-color: #1a1a2e;
-                border-radius: 12px;
+                background-color: #16162a;
+                border-radius: 14px;
                 overflow: hidden;
-                transition: transform 0.3s;
+                transition: all 0.3s ease;
+                height: 100%;
             }
             .anime-card:hover {
-                transform: translateY(-8px);
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
             }
             .anime-img {
-                height: 280px;
-                object-fit: cover;
+                height: 320px;
                 width: 100%;
+                object-fit: cover;
+            }
+            .anime-info {
+                padding: 16px;
+            }
+            .anime-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+            .anime-genre {
+                font-size: 0.85rem;
+                color: #aaa;
             }
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="/">AnimeHub</a>
+                <a class="navbar-brand fw-bold fs-4" href="/">AnimeHub</a>
                 <div class="d-flex gap-3">
                     <a class="nav-link text-white" href="/">Home</a>
                     <a class="nav-link text-white" href="/anime">Anime</a>
@@ -161,85 +185,86 @@ def anime():
         </nav>
 
         <div class="container my-5">
-            <h1 class="text-center text-danger mb-4">Popular Anime</h1>
+            <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Anime</h1>
+            
             <div class="row g-4">
 
-                <div class="col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="anime-img" alt="Naruto">
-                        <div class="p-3">
-                            <h5>Naruto</h5>
-                            <p class="small text-muted">Action, Adventure</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/1208/94745.jpg" class="anime-img" alt="One Piece">
-                        <div class="p-3">
-                            <h5>One Piece</h5>
-                            <p class="small text-muted">Adventure, Fantasy</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" class="anime-img" alt="Demon Slayer">
-                        <div class="p-3">
-                            <h5>Demon Slayer</h5>
-                            <p class="small text-muted">Action, Supernatural</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" class="anime-img" alt="Jujutsu Kaisen">
-                        <div class="p-3">
-                            <h5>Jujutsu Kaisen</h5>
-                            <p class="small text-muted">Action, Dark Fantasy</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
+                <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" class="anime-img" alt="Death Note">
-                        <div class="p-3">
-                            <h5>Death Note</h5>
-                            <p class="small text-muted">Mystery, Thriller</p>
+                        <div class="anime-info">
+                            <div class="anime-title">Death Note</div>
+                            <div class="anime-genre">Mystery • Thriller</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-6 col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="anime-img" alt="Naruto">
+                        <div class="anime-info">
+                            <div class="anime-title">Naruto</div>
+                            <div class="anime-genre">Action • Adventure</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1208/94745.jpg" class="anime-img" alt="One Piece">
+                        <div class="anime-info">
+                            <div class="anime-title">One Piece</div>
+                            <div class="anime-genre">Adventure • Fantasy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" class="anime-img" alt="Jujutsu Kaisen">
+                        <div class="anime-info">
+                            <div class="anime-title">Jujutsu Kaisen</div>
+                            <div class="anime-genre">Action • Dark Fantasy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" class="anime-img" alt="Demon Slayer">
+                        <div class="anime-info">
+                            <div class="anime-title">Demon Slayer</div>
+                            <div class="anime-genre">Action • Supernatural</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/5/73199.jpg" class="anime-img" alt="Attack on Titan">
-                        <div class="p-3">
-                            <h5>Attack on Titan</h5>
-                            <p class="small text-muted">Action, Drama</p>
+                        <div class="anime-info">
+                            <div class="anime-title">Attack on Titan</div>
+                            <div class="anime-genre">Action • Drama</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/3/72046.jpg" class="anime-img" alt="Tokyo Ghoul">
-                        <div class="p-3">
-                            <h5>Tokyo Ghoul</h5>
-                            <p class="small text-muted">Action, Horror</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
+                <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/11/39717.jpg" class="anime-img" alt="Hunter x Hunter">
-                        <div class="p-3">
-                            <h5>Hunter x Hunter</h5>
-                            <p class="small text-muted">Adventure, Fantasy</p>
+                        <div class="anime-info">
+                            <div class="anime-title">Hunter x Hunter</div>
+                            <div class="anime-genre">Adventure • Fantasy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/3/72046.jpg" class="anime-img" alt="Tokyo Ghoul">
+                        <div class="anime-info">
+                            <div class="anime-title">Tokyo Ghoul</div>
+                            <div class="anime-genre">Action • Horror</div>
                         </div>
                     </div>
                 </div>
@@ -259,8 +284,8 @@ def manga():
         <title>Manga - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body { background-color: #0f0f1a; color: white; }
-            .navbar { background-color: #1a1a2e !important; }
+            body { background-color: #0b0b13; color: white; }
+            .navbar { background-color: #12121f !important; }
         </style>
     </head>
     <body>
@@ -276,7 +301,7 @@ def manga():
             </div>
         </nav>
         <div class="container my-5 text-center">
-            <h1 class="text-danger">Manga Section</h1>
+            <h1 style="color:#e94560;">Manga Section</h1>
             <p class="lead">Yahaan popular manga list aayegi.</p>
             <a href="/" class="btn btn-outline-light mt-3">Back to Home</a>
         </div>
@@ -293,8 +318,8 @@ def manhwa():
         <title>Manhwa - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body { background-color: #0f0f1a; color: white; }
-            .navbar { background-color: #1a1a2e !important; }
+            body { background-color: #0b0b13; color: white; }
+            .navbar { background-color: #12121f !important; }
         </style>
     </head>
     <body>
@@ -310,7 +335,7 @@ def manhwa():
             </div>
         </nav>
         <div class="container my-5 text-center">
-            <h1 class="text-danger">Manhwa Section</h1>
+            <h1 style="color:#e94560;">Manhwa Section</h1>
             <p class="lead">Yahaan Korean Manhwa aur Webtoons aayenge.</p>
             <a href="/" class="btn btn-outline-light mt-3">Back to Home</a>
         </div>
@@ -326,7 +351,7 @@ def contact():
         with open('messages.txt', 'a', encoding='utf-8') as f:
             f.write(f"Time: {datetime.now()}\nName: {name}\nMessage: {message}\n{'-'*40}\n")
         return f"""
-        <div style="background:#0f0f1a;color:white;min-height:100vh;text-align:center;padding-top:100px;">
+        <div style="background:#0b0b13;color:white;min-height:100vh;text-align:center;padding-top:100px;">
             <h2>Thank You {name}!</h2>
             <p>Aapka message save ho gaya.</p>
             <a href="/" style="color:#e94560;">Home par wapas jayein</a>
@@ -339,8 +364,8 @@ def contact():
         <title>Contact - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body { background-color: #0f0f1a; color: white; }
-            .navbar { background-color: #1a1a2e !important; }
+            body { background-color: #0b0b13; color: white; }
+            .navbar { background-color: #12121f !important; }
         </style>
     </head>
     <body>
@@ -388,7 +413,7 @@ def signup():
         <title>Signup - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{ background-color: #0f0f1a; color: white; }}
+            body {{ background-color: #0b0b13; color: white; }}
         </style>
     </head>
     <body>
@@ -433,7 +458,7 @@ def login():
         <title>Login - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{ background-color: #0f0f1a; color: white; }}
+            body {{ background-color: #0b0b13; color: white; }}
         </style>
     </head>
     <body>
