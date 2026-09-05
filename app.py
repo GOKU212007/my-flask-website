@@ -125,6 +125,7 @@ def home():
     """
 
 @app.route('/anime')
+@app.route('/anime')
 def anime():
     return """
     <!DOCTYPE html>
@@ -133,42 +134,42 @@ def anime():
         <title>Anime - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{
+            body {
                 background-color: #0b0b13;
                 color: white;
                 font-family: 'Segoe UI', sans-serif;
-            }}
-            .navbar {{
+            }
+            .navbar {
                 background-color: #12121f !important;
-            }}
-            .anime-card {{
+            }
+            .anime-card {
                 background-color: #16162a;
                 border-radius: 14px;
                 overflow: hidden;
                 transition: all 0.3s ease;
                 height: 100%;
-            }}
-            .anime-card:hover {{
+            }
+            .anime-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
-            }}
-            .anime-img {{
+            }
+            .anime-img {
                 height: 320px;
                 width: 100%;
                 object-fit: cover;
-            }}
-            .anime-info {{
+            }
+            .anime-info {
                 padding: 16px;
-            }}
-            .anime-title {{
+            }
+            .anime-title {
                 font-size: 1.1rem;
                 font-weight: 600;
                 margin-bottom: 4px;
-            }}
-            .anime-genre {{
+            }
+            .anime-genre {
                 font-size: 0.85rem;
                 color: #aaa;
-            }}
+            }
         </style>
     </head>
     <body>
@@ -265,8 +266,6 @@ def anime():
     </body>
     </html>
     """
-
-@app.route('/manga')
 def manga():
     return """
     <!DOCTYPE html>
