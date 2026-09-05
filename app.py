@@ -23,12 +23,13 @@ def save_user(username, password):
 
 @app.route('/')
 @app.route('/anime')
-def anime():
+@app.route('/manga')
+def manga():
     return """
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Anime - AnimeHub</title>
+        <title>Manga - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
@@ -39,31 +40,31 @@ def anime():
             .navbar {
                 background-color: #12121f !important;
             }
-            .anime-card {
+            .manga-card {
                 background-color: #16162a;
                 border-radius: 14px;
                 overflow: hidden;
                 transition: all 0.3s ease;
                 height: 100%;
             }
-            .anime-card:hover {
+            .manga-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
             }
-            .anime-img {
+            .manga-img {
                 height: 320px;
                 width: 100%;
                 object-fit: cover;
             }
-            .anime-info {
+            .manga-info {
                 padding: 16px;
             }
-            .anime-title {
+            .manga-title {
                 font-size: 1.1rem;
                 font-weight: 600;
                 margin-bottom: 4px;
             }
-            .anime-genre {
+            .manga-genre {
                 font-size: 0.85rem;
                 color: #aaa;
             }
@@ -83,86 +84,86 @@ def anime():
         </nav>
 
         <div class="container my-5">
-            <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Anime</h1>
+            <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Manga</h1>
             
             <div class="row g-4">
 
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/9/9453.jpg" class="anime-img" alt="Death Note">
-                        <div class="anime-info">
-                            <div class="anime-title">Death Note</div>
-                            <div class="anime-genre">Mystery • Thriller</div>
+                    <div class="manga-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/3/55539.jpg" class="manga-img" alt="One Piece">
+                        <div class="manga-info">
+                            <div class="manga-title">One Piece</div>
+                            <div class="manga-genre">Adventure • Fantasy</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" class="anime-img" alt="Naruto">
-                        <div class="anime-info">
-                            <div class="anime-title">Naruto</div>
-                            <div class="anime-genre">Action • Adventure</div>
+                    <div class="manga-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" class="manga-img" alt="Naruto">
+                        <div class="manga-info">
+                            <div class="manga-title">Naruto</div>
+                            <div class="manga-genre">Action • Adventure</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg" class="anime-img" alt="One Piece">
-                        <div class="anime-info">
-                            <div class="anime-title">One Piece</div>
-                            <div class="anime-genre">Adventure • Fantasy</div>
+                    <div class="manga-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/3/180031.jpg" class="manga-img" alt="Attack on Titan">
+                        <div class="manga-info">
+                            <div class="manga-title">Attack on Titan</div>
+                            <div class="manga-genre">Action • Drama</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" class="anime-img" alt="Jujutsu Kaisen">
-                        <div class="anime-info">
-                            <div class="anime-title">Jujutsu Kaisen</div>
-                            <div class="anime-genre">Action • Dark Fantasy</div>
+                    <div class="manga-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/1/157931.jpg" class="manga-img" alt="Death Note">
+                        <div class="manga-info">
+                            <div class="manga-title">Death Note</div>
+                            <div class="manga-genre">Mystery • Thriller</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" class="anime-img" alt="DemonSlayer">
-                        <div class="anime-info">
-                            <div class="anime-title">DemonSlayer</div>
-                            <div class="anime-genre">Action • Supernatural</div>
+                    <div class="manga-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/3/188896.jpg" class="manga-img" alt="DemonSlayer">
+                        <div class="manga-info">
+                            <div class="manga-title">DemonSlayer</div>
+                            <div class="manga-genre">Action • Supernatural</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="anime-img" alt="Attack on Titan">
-                        <div class="anime-info">
-                            <div class="anime-title">Attack on Titan</div>
-                            <div class="anime-genre">Action • Drama</div>
+                    <div class="manga-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/1/157897.jpg" class="manga-img" alt="Tokyo Ghoul">
+                        <div class="manga-info">
+                            <div class="manga-title">Tokyo Ghoul</div>
+                            <div class="manga-genre">Action • Horror</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/1337/99013.jpg" class="anime-img" alt="Hunter x Hunter">
-                        <div class="anime-info">
-                            <div class="anime-title">Hunter x Hunter</div>
-                            <div class="anime-genre">Adventure • Fantasy</div>
+                    <div class="manga-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" class="manga-img" alt="Jujutsu Kaisen">
+                        <div class="manga-info">
+                            <div class="manga-title">Jujutsu Kaisen</div>
+                            <div class="manga-genre">Action • Dark Fantasy</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/5/64449.jpg" class="anime-img" alt="Tokyo Ghoul">
-                        <div class="anime-info">
-                            <div class="anime-title">Tokyo Ghoul</div>
-                            <div class="anime-genre">Action • Horror</div>
+                    <div class="manga-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/3/180031.jpg" class="manga-img" alt="Hunter x Hunter">
+                        <div class="manga-info">
+                            <div class="manga-title">Hunter x Hunter</div>
+                            <div class="manga-genre">Adventure • Fantasy</div>
                         </div>
                     </div>
                 </div>
@@ -172,7 +173,6 @@ def anime():
     </body>
     </html>
     """
-
 @app.route('/anime')
 @app.route('/anime')
 def anime():
