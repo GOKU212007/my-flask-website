@@ -176,6 +176,7 @@ def manhwa():
     """
 @app.route('/anime')
 @app.route('/anime')
+@app.route('/anime')
 def anime():
     return """
     <!DOCTYPE html>
@@ -239,15 +240,7 @@ def anime():
             <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Anime</h1>
             
             <div class="row g-4">
-                <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" class="anime-img" alt="Death Note">
-                        <div class="anime-info">
-                            <div class="anime-title">Death Note</div>
-                            <div class="anime-genre">Mystery • Thriller</div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="anime-img" alt="Naruto">
@@ -257,6 +250,7 @@ def anime():
                         </div>
                     </div>
                 </div>
+
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1208/94745.jpg" class="anime-img" alt="One Piece">
@@ -266,6 +260,17 @@ def anime():
                         </div>
                     </div>
                 </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" class="anime-img" alt="DemonSlayer">
+                        <div class="anime-info">
+                            <div class="anime-title">DemonSlayer</div>
+                            <div class="anime-genre">Action • Supernatural</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" class="anime-img" alt="Jujutsu Kaisen">
@@ -275,15 +280,7 @@ def anime():
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" class="anime-img" alt="Demon Slayer">
-                        <div class="anime-info">
-                            <div class="anime-title">Demon Slayer</div>
-                            <div class="anime-genre">Action • Supernatural</div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/5/73199.jpg" class="anime-img" alt="Attack on Titan">
@@ -293,6 +290,17 @@ def anime():
                         </div>
                     </div>
                 </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="anime-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" class="anime-img" alt="Death Note">
+                        <div class="anime-info">
+                            <div class="anime-title">Death Note</div>
+                            <div class="anime-genre">Mystery • Thriller</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/11/39717.jpg" class="anime-img" alt="Hunter x Hunter">
@@ -302,6 +310,7 @@ def anime():
                         </div>
                     </div>
                 </div>
+
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/3/72046.jpg" class="anime-img" alt="Tokyo Ghoul">
@@ -311,12 +320,13 @@ def anime():
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </body>
     </html>
     """
-def manga():
+    def manga():
     return """
     <!DOCTYPE html>
     <html>
