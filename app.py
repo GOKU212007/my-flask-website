@@ -175,8 +175,6 @@ def manhwa():
     </html>
     """
 @app.route('/anime')
-@app.route('/anime')
-@app.route('/anime')
 def anime():
     return """
     <!DOCTYPE html>
