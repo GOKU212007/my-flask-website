@@ -348,41 +348,7 @@ def manga():
     </body>
     </html>
     """
-
 @app.route('/manhwa')
-def manhwa():
-    return """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Manhwa - AnimeHub</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            body {{ background-color: #0b0b13; color: white; }}
-            .navbar {{ background-color: #12121f !important; }}
-        </style>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="/">AnimeHub</a>
-                <div class="d-flex gap-3">
-                    <a class="nav-link text-white" href="/">Home</a>
-                    <a class="nav-link text-white" href="/anime">Anime</a>
-                    <a class="nav-link text-white" href="/manga">Manga</a>
-                    <a class="nav-link text-white" href="/manhwa">Manhwa</a>
-                </div>
-            </div>
-        </nav>
-        <div class="container my-5 text-center">
-            <h1 style="color:#e94560;">Manhwa Section</h1>
-            <p class="lead">Yahaan Korean Manhwa aur Webtoons aayenge.</p>
-            <a href="/" class="btn btn-outline-light mt-3">Back to Home</a>
-        </div>
-    </body>
-    </html>
-    """
-
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
