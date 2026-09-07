@@ -24,12 +24,13 @@ def save_user(username, password):
 @app.route('/')
 @app.route('/anime')
 @app.route('/manga')
-def manga():
+@app.route('/manhwa')
+def manhwa():
     return """
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Manga - AnimeHub</title>
+        <title>Manhwa - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
@@ -40,31 +41,31 @@ def manga():
             .navbar {
                 background-color: #12121f !important;
             }
-            .manga-card {
+            .manhwa-card {
                 background-color: #16162a;
                 border-radius: 14px;
                 overflow: hidden;
                 transition: all 0.3s ease;
                 height: 100%;
             }
-            .manga-card:hover {
+            .manhwa-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
             }
-            .manga-img {
+            .manhwa-img {
                 height: 320px;
                 width: 100%;
                 object-fit: cover;
             }
-            .manga-info {
+            .manhwa-info {
                 padding: 16px;
             }
-            .manga-title {
+            .manhwa-title {
                 font-size: 1.1rem;
                 font-weight: 600;
                 margin-bottom: 4px;
             }
-            .manga-genre {
+            .manhwa-genre {
                 font-size: 0.85rem;
                 color: #aaa;
             }
@@ -84,86 +85,86 @@ def manga():
         </nav>
 
         <div class="container my-5">
-            <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Manga</h1>
+            <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Manhwa</h1>
             
             <div class="row g-4">
 
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
-                        <img src="https://cdn.myanimelist.net/images/manga/3/55539.jpg" class="manga-img" alt="One Piece">
-                        <div class="manga-info">
-                            <div class="manga-title">One Piece</div>
-                            <div class="manga-genre">Adventure • Fantasy</div>
+                    <div class="manhwa-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/3/218851.jpg" class="manhwa-img" alt="Solo Leveling">
+                        <div class="manhwa-info">
+                            <div class="manhwa-title">Solo Leveling</div>
+                            <div class="manhwa-genre">Action • Fantasy</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
-                        <img src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" class="manga-img" alt="Naruto">
-                        <div class="manga-info">
-                            <div class="manga-title">Naruto</div>
-                            <div class="manga-genre">Action • Adventure</div>
+                    <div class="manhwa-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/1/157897.jpg" class="manhwa-img" alt="Tower of God">
+                        <div class="manhwa-info">
+                            <div class="manhwa-title">Tower of God</div>
+                            <div class="manhwa-genre">Action • Adventure</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
-                        <img src="https://cdn.myanimelist.net/images/manga/3/180031.jpg" class="manga-img" alt="Attack on Titan">
-                        <div class="manga-info">
-                            <div class="manga-title">Attack on Titan</div>
-                            <div class="manga-genre">Action • Drama</div>
+                    <div class="manhwa-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" class="manhwa-img" alt="The God of High School">
+                        <div class="manhwa-info">
+                            <div class="manhwa-title">The God of High School</div>
+                            <div class="manhwa-genre">Action • Martial Arts</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
-                        <img src="https://cdn.myanimelist.net/images/manga/1/157931.jpg" class="manga-img" alt="Death Note">
-                        <div class="manga-info">
-                            <div class="manga-title">Death Note</div>
-                            <div class="manga-genre">Mystery • Thriller</div>
+                    <div class="manhwa-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/3/180031.jpg" class="manhwa-img" alt="Noblesse">
+                        <div class="manhwa-info">
+                            <div class="manhwa-title">Noblesse</div>
+                            <div class="manhwa-genre">Action • Supernatural</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
-                        <img src="https://cdn.myanimelist.net/images/manga/3/188896.jpg" class="manga-img" alt="DemonSlayer">
-                        <div class="manga-info">
-                            <div class="manga-title">DemonSlayer</div>
-                            <div class="manga-genre">Action • Supernatural</div>
+                    <div class="manhwa-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/1/157931.jpg" class="manhwa-img" alt="True Beauty">
+                        <div class="manhwa-info">
+                            <div class="manhwa-title">True Beauty</div>
+                            <div class="manhwa-genre">Romance • Drama</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
-                        <img src="https://cdn.myanimelist.net/images/manga/1/157897.jpg" class="manga-img" alt="Tokyo Ghoul">
-                        <div class="manga-info">
-                            <div class="manga-title">Tokyo Ghoul</div>
-                            <div class="manga-genre">Action • Horror</div>
+                    <div class="manhwa-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/3/188896.jpg" class="manhwa-img" alt="Lookism">
+                        <div class="manhwa-info">
+                            <div class="manhwa-title">Lookism</div>
+                            <div class="manhwa-genre">Drama • School</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
-                        <img src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" class="manga-img" alt="Jujutsu Kaisen">
-                        <div class="manga-info">
-                            <div class="manga-title">Jujutsu Kaisen</div>
-                            <div class="manga-genre">Action • Dark Fantasy</div>
+                    <div class="manhwa-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" class="manhwa-img" alt="Omniscient Reader">
+                        <div class="manhwa-info">
+                            <div class="manhwa-title">Omniscient Reader</div>
+                            <div class="manhwa-genre">Action • Fantasy</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
-                        <img src="https://cdn.myanimelist.net/images/manga/3/180031.jpg" class="manga-img" alt="Hunter x Hunter">
-                        <div class="manga-info">
-                            <div class="manga-title">Hunter x Hunter</div>
-                            <div class="manga-genre">Adventure • Fantasy</div>
+                    <div class="manhwa-card">
+                        <img src="https://cdn.myanimelist.net/images/manga/3/218851.jpg" class="manhwa-img" alt="Sweet Home">
+                        <div class="manhwa-info">
+                            <div class="manhwa-title">Sweet Home</div>
+                            <div class="manhwa-genre">Horror • Thriller</div>
                         </div>
                     </div>
                 </div>
