@@ -324,7 +324,7 @@ def anime():
     </body>
     </html>
     """
-    def manga():
+  def manga():
     return """
     <!DOCTYPE html>
     <html>
