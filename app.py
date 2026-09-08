@@ -85,7 +85,7 @@ def manhwa():
         </nav>
 
         <div class="container my-5">
-            <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Manhwa</h1>
+            <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Anime</h1>
             
             <div class="row g-4">
 
