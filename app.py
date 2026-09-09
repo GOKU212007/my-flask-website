@@ -632,3 +632,76 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
+@app.route('/search')
+def search():
+    query = request.args.get('q', '').lower()
+    
+    # Sample data
+    all_items = [
+        {"title": "Naruto", "type": "Anime", "genre": "Action • Adventure"},
+        {"title": "One Piece", "type": "Anime", "genre": "Adventure • Fantasy"},
+        {"title": "Demon Slayer", "type": "Anime", "genre": "Action • Supernatural"},
+        {"title": "Jujutsu Kaisen", "type": "Anime", "genre": "Action • Dark Fantasy"},
+        {"title": "Attack on Titan", "type": "Anime", "genre": "Action • Drama"},
+        {"title": "Death Note", "type": "Anime", "genre": "Mystery • Thriller"},
+        {"title": "Solo Leveling", "type": "Manhwa", "genre": "Action • Fantasy"},
+        {"title": "Tower of God", "type": "Manhwa", "genre": "Action • Adventure"},
+        {"title": "One Piece", "type": "Manga", "genre": "Adventure • Fantasy"},
+        {"title": "Naruto", "type": "Manga", "genre": "Action • Adventure"},
+    ]
+    
+    results = [item for item in all_items if query in item["title"].lower()]
+    
+    results_html = ""
+    if results:
+        for item in results:
+            results_html += f"""
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{item['title']}</h5>
+                        <p class="card-text text-secondary">{item['type']} • {item['genre']}</p>
+                    </div>
+                </div>
+            </div>
+            """
+    else:
+        results_html = f"<p class='text-center'>No results found for '<strong>{query}</strong>'</p>"
+
+    return f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Search Results - AnimeHub</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {{ background-color: #0b0b13; color: white; font-family: 'Segoe UI', sans-serif; }}
+            .navbar {{ background-color: #12121f !important; }}
+            .card {{ border: none; border-radius: 12px; }}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="/">AnimeHub</a>
+                <div class="d-flex gap-3">
+                    <a class="nav-link text-white" href="/">Home</a>
+                    <a class="nav-link text-white" href="/anime">Anime</a>
+                    <a class="nav-link text-white" href="/manga">Manga</a>
+                    <a class="nav-link text-white" href="/manhwa">Manhwa</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container my-5">
+            <h2 class="mb-4" style="color:#e94560;">Search Results for "{query}"</h2>
+            <div class="row">
+                {results_html}
+            </div>
+            <div class="text-center mt-4">
+                <a href="/" class="btn btn-outline-light">Back to Home</a>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
