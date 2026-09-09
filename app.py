@@ -22,6 +22,7 @@ def save_user(username, password):
         f.write(f"{username}|{password}\n")
 
 @app.route('/')
+@app.route('/')
 def home():
     if "username" in session:
         user = session["username"]
@@ -35,18 +36,56 @@ def home():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>AnimeHub</title>
+        <title>AnimeHub - Anime, Manga & Manhwa</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body {{ background-color: #0b0b13; color: white; font-family: 'Segoe UI', sans-serif; }}
-            .navbar {{ background-color: #12121f !important; }}
+            body {{
+                background-color: #0b0b13;
+                color: white;
+                font-family: 'Segoe UI', sans-serif;
+            }}
+            .navbar {{
+                background-color: #12121f !important;
+            }}
             .hero {{
-                background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1400') center/cover;
-                padding: 100px 0;
+                background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                            url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1400') center/cover;
+                padding: 120px 0;
                 text-align: center;
             }}
-            .card {{ background-color: #16162a; border: none; border-radius: 14px; transition: 0.3s; }}
-            .card:hover {{ transform: translateY(-8px); box-shadow: 0 12px 25px rgba(233,69,96,0.25); }}
+            .hero h1 {{
+                font-size: 3.2rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }}
+            .hero p {{
+                font-size: 1.2rem;
+                color: #ccc;
+                margin-bottom: 30px;
+            }}
+            .card {{
+                background-color: #16162a;
+                border: none;
+                border-radius: 16px;
+                transition: all 0.3s ease;
+                height: 100%;
+            }}
+            .card:hover {{
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
+            }}
+            .section-title {{
+                color: #e94560;
+                font-weight: 700;
+                margin-bottom: 40px;
+            }}
+            .btn-danger {{
+                background-color: #e94560;
+                border: none;
+            }}
+            .btn-danger:hover {{
+                background-color: #d63850;
+            }}
         </style>
     </head>
     <body>
@@ -68,43 +107,43 @@ def home():
 
         <div class="hero">
             <div class="container">
-                <h1 class="display-4 fw-bold">Welcome to AnimeHub</h1>
-                <p class="lead">Your ultimate destination for Anime, Manga & Manhwa</p>
+                <h1>Welcome to AnimeHub</h1>
+                <p>Your ultimate destination for Anime, Manga & Manhwa</p>
                 {welcome}
-                <div class="mt-4">
-                    <a href="/anime" class="btn btn-danger btn-lg me-2">Explore Anime</a>
-                    <a href="/manga" class="btn btn-outline-light btn-lg">Explore Manga</a>
+                <div class="mt-3">
+                    <a href="/anime" class="btn btn-danger btn-lg me-2 px-4">Explore Anime</a>
+                    <a href="/manga" class="btn btn-outline-light btn-lg px-4">Explore Manga</a>
                 </div>
             </div>
         </div>
 
         <div class="container my-5">
-            <h2 class="text-center mb-4" style="color:#e94560;">Popular Categories</h2>
+            <h2 class="text-center section-title">Popular Categories</h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card text-white h-100">
-                        <div class="card-body text-center p-4">
-                            <h3>Anime</h3>
-                            <p class="text-secondary">Best anime series and movies</p>
-                            <a href="/anime" class="btn btn-danger mt-2">View Anime</a>
+                    <div class="card text-white">
+                        <div class="card-body text-center p-5">
+                            <h3 class="mb-3">Anime</h3>
+                            <p class="text-secondary mb-4">Watch and discover the best anime series and movies from Japan.</p>
+                            <a href="/anime" class="btn btn-danger px-4">View Anime</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-white h-100">
-                        <div class="card-body text-center p-4">
-                            <h3>Manga</h3>
-                            <p class="text-secondary">Popular Japanese manga</p>
-                            <a href="/manga" class="btn btn-danger mt-2">View Manga</a>
+                    <div class="card text-white">
+                        <div class="card-body text-center p-5">
+                            <h3 class="mb-3">Manga</h3>
+                            <p class="text-secondary mb-4">Read popular Japanese manga online. Classic and new titles.</p>
+                            <a href="/manga" class="btn btn-danger px-4">View Manga</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-white h-100">
-                        <div class="card-body text-center p-4">
-                            <h3>Manhwa</h3>
-                            <p class="text-secondary">Korean manhwa & webtoons</p>
-                            <a href="/manhwa" class="btn btn-danger mt-2">View Manhwa</a>
+                    <div class="card text-white">
+                        <div class="card-body text-center p-5">
+                            <h3 class="mb-3">Manhwa</h3>
+                            <p class="text-secondary mb-4">Explore Korean manhwa and webtoons with amazing stories.</p>
+                            <a href="/manhwa" class="btn btn-danger px-4">View Manhwa</a>
                         </div>
                     </div>
                 </div>
@@ -113,7 +152,6 @@ def home():
     </body>
     </html>
     """
-
 @app.route('/anime')
 @app.route('/anime')
 def anime():
