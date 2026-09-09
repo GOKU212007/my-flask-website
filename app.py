@@ -633,21 +633,21 @@ def logout():
 if __name__ == '__main__':
     app.run(debug=True)
 @app.route('/search')
+@app.route('/search')
 def search():
     query = request.args.get('q', '').lower()
     
-    # Sample data
     all_items = [
-        {"title": "Naruto", "type": "Anime", "genre": "Action • Adventure"},
-        {"title": "One Piece", "type": "Anime", "genre": "Adventure • Fantasy"},
-        {"title": "Demon Slayer", "type": "Anime", "genre": "Action • Supernatural"},
-        {"title": "Jujutsu Kaisen", "type": "Anime", "genre": "Action • Dark Fantasy"},
-        {"title": "Attack on Titan", "type": "Anime", "genre": "Action • Drama"},
-        {"title": "Death Note", "type": "Anime", "genre": "Mystery • Thriller"},
-        {"title": "Solo Leveling", "type": "Manhwa", "genre": "Action • Fantasy"},
-        {"title": "Tower of God", "type": "Manhwa", "genre": "Action • Adventure"},
-        {"title": "One Piece", "type": "Manga", "genre": "Adventure • Fantasy"},
-        {"title": "Naruto", "type": "Manga", "genre": "Action • Adventure"},
+        {"title": "Naruto", "type": "Anime", "genre": "Action • Adventure", "img": "https://cdn.myanimelist.net/images/anime/10/47347.jpg"},
+        {"title": "One Piece", "type": "Anime", "genre": "Adventure • Fantasy", "img": "https://cdn.myanimelist.net/images/anime/6/73245.jpg"},
+        {"title": "Demon Slayer", "type": "Anime", "genre": "Action • Supernatural", "img": "https://cdn.myanimelist.net/images/anime/1286/99889.jpg"},
+        {"title": "Jujutsu Kaisen", "type": "Anime", "genre": "Action • Dark Fantasy", "img": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg"},
+        {"title": "Attack on Titan", "type": "Anime", "genre": "Action • Drama", "img": "https://cdn.myanimelist.net/images/anime/5/73199.jpg"},
+        {"title": "Death Note", "type": "Anime", "genre": "Mystery • Thriller", "img": "https://cdn.myanimelist.net/images/anime/9/9453.jpg"},
+        {"title": "Solo Leveling", "type": "Manhwa", "genre": "Action • Fantasy", "img": "https://cdn.myanimelist.net/images/manga/3/218851.jpg"},
+        {"title": "Tower of God", "type": "Manhwa", "genre": "Action • Adventure", "img": "https://cdn.myanimelist.net/images/manga/1/157897.jpg"},
+        {"title": "One Piece", "type": "Manga", "genre": "Adventure • Fantasy", "img": "https://cdn.myanimelist.net/images/manga/3/55539.jpg"},
+        {"title": "Naruto", "type": "Manga", "genre": "Action • Adventure", "img": "https://cdn.myanimelist.net/images/manga/2/253146.jpg"},
     ]
     
     results = [item for item in all_items if query in item["title"].lower()]
@@ -656,17 +656,18 @@ def search():
     if results:
         for item in results:
             results_html += f"""
-            <div class="col-md-4 mb-4">
-                <div class="card bg-dark text-white h-100">
+            <div class="col-6 col-md-3 mb-4">
+                <div class="card h-100" style="background:#16162a; border:none; border-radius:12px; overflow:hidden;">
+                    <img src="{item['img']}" class="card-img-top" style="height:280px; object-fit:cover;" alt="{item['title']}">
                     <div class="card-body">
-                        <h5 class="card-title">{item['title']}</h5>
-                        <p class="card-text text-secondary">{item['type']} • {item['genre']}</p>
+                        <h6 class="card-title mb-1">{item['title']}</h6>
+                        <p class="card-text text-secondary small">{item['type']} • {item['genre']}</p>
                     </div>
                 </div>
             </div>
             """
     else:
-        results_html = f"<p class='text-center'>No results found for '<strong>{query}</strong>'</p>"
+        results_html = f"<p class='text-center text-secondary'>No results found for '<strong>{query}</strong>'</p>"
 
     return f"""
     <!DOCTYPE html>
@@ -677,7 +678,6 @@ def search():
         <style>
             body {{ background-color: #0b0b13; color: white; font-family: 'Segoe UI', sans-serif; }}
             .navbar {{ background-color: #12121f !important; }}
-            .card {{ border: none; border-radius: 12px; }}
         </style>
     </head>
     <body>
