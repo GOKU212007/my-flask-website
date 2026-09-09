@@ -23,6 +23,7 @@ def save_user(username, password):
 
 @app.route('/')
 @app.route('/')
+@app.route('/')
 def home():
     if "username" in session:
         user = session["username"]
@@ -50,18 +51,39 @@ def home():
             .hero {{
                 background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
                             url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1400') center/cover;
-                padding: 120px 0;
+                padding: 110px 0;
                 text-align: center;
             }}
             .hero h1 {{
-                font-size: 3.2rem;
+                font-size: 3rem;
                 font-weight: 700;
                 margin-bottom: 15px;
             }}
             .hero p {{
-                font-size: 1.2rem;
+                font-size: 1.15rem;
                 color: #ccc;
-                margin-bottom: 30px;
+                margin-bottom: 25px;
+            }}
+            .search-box {{
+                max-width: 500px;
+                margin: 0 auto 25px auto;
+            }}
+            .search-box input {{
+                background-color: #1a1a2e;
+                border: 1px solid #333;
+                color: white;
+                padding: 12px 18px;
+                border-radius: 8px 0 0 8px;
+            }}
+            .search-box input::placeholder {{
+                color: #888;
+            }}
+            .search-box button {{
+                background-color: #e94560;
+                border: none;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 0 8px 8px 0;
             }}
             .card {{
                 background-color: #16162a;
@@ -110,7 +132,15 @@ def home():
                 <h1>Welcome to AnimeHub</h1>
                 <p>Your ultimate destination for Anime, Manga & Manhwa</p>
                 {welcome}
-                <div class="mt-3">
+
+                <div class="search-box">
+                    <form action="/search" method="GET" class="d-flex">
+                        <input type="text" name="q" class="form-control" placeholder="Search Anime, Manga, Manhwa..." required>
+                        <button type="submit" class="btn">Search</button>
+                    </form>
+                </div>
+
+                <div class="mt-2">
                     <a href="/anime" class="btn btn-danger btn-lg me-2 px-4">Explore Anime</a>
                     <a href="/manga" class="btn btn-outline-light btn-lg px-4">Explore Manga</a>
                 </div>
