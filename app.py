@@ -24,6 +24,7 @@ def save_user(username, password):
 @app.route('/')
 @app.route('/')
 @app.route('/')
+@app.route('/')
 def home():
     if "username" in session:
         user = session["username"]
@@ -108,6 +109,19 @@ def home():
             .btn-danger:hover {{
                 background-color: #d63850;
             }}
+            footer {{
+                background-color: #12121f;
+                padding: 30px 0;
+                margin-top: 60px;
+                text-align: center;
+                color: #aaa;
+                font-size: 0.9rem;
+            }}
+            footer a {{
+                color: #e94560;
+                text-decoration: none;
+                margin: 0 10px;
+            }}
         </style>
     </head>
     <body>
@@ -179,6 +193,19 @@ def home():
                 </div>
             </div>
         </div>
+
+        <footer>
+            <div class="container">
+                <p class="mb-2">© 2026 AnimeHub. All rights reserved.</p>
+                <div>
+                    <a href="/">Home</a>
+                    <a href="/anime">Anime</a>
+                    <a href="/manga">Manga</a>
+                    <a href="/manhwa">Manhwa</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </footer>
     </body>
     </html>
     """
