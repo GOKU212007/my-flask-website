@@ -523,6 +523,7 @@ def manga():
 
 @app.route('/manhwa')
 @app.route('/manhwa')
+@app.route('/manhwa')
 def manhwa():
     return """
     <!DOCTYPE html>
@@ -545,10 +546,14 @@ def manhwa():
                 overflow: hidden;
                 transition: all 0.3s ease;
                 height: 100%;
+                text-decoration: none;
+                color: white;
+                display: block;
             }
             .manhwa-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
+                color: white;
             }
             .manhwa-img {
                 height: 320px;
@@ -600,40 +605,40 @@ def manhwa():
             
             <div class="row g-4">
                 <div class="col-6 col-md-3">
-                    <div class="manhwa-card">
+                    <a href="/details/Solo Leveling" class="manhwa-card">
                         <img src="https://cdn.myanimelist.net/images/manga/3/218851.jpg" class="manhwa-img" alt="Solo Leveling">
                         <div class="manhwa-info">
                             <div class="manhwa-title">Solo Leveling</div>
                             <div class="manhwa-genre">Action • Fantasy</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="manhwa-card">
+                    <a href="/details/Tower of God" class="manhwa-card">
                         <img src="https://cdn.myanimelist.net/images/manga/1/157897.jpg" class="manhwa-img" alt="Tower of God">
                         <div class="manhwa-info">
                             <div class="manhwa-title">Tower of God</div>
                             <div class="manhwa-genre">Action • Adventure</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="manhwa-card">
+                    <a href="/details/The God of High School" class="manhwa-card">
                         <img src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" class="manhwa-img" alt="The God of High School">
                         <div class="manhwa-info">
                             <div class="manhwa-title">The God of High School</div>
                             <div class="manhwa-genre">Action • Martial Arts</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="manhwa-card">
+                    <a href="/details/Noblesse" class="manhwa-card">
                         <img src="https://cdn.myanimelist.net/images/manga/3/180031.jpg" class="manhwa-img" alt="Noblesse">
                         <div class="manhwa-info">
                             <div class="manhwa-title">Noblesse</div>
                             <div class="manhwa-genre">Action • Supernatural</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
