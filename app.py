@@ -877,8 +877,10 @@ def search():
     </html>
     """
 @app.route('/details/<name>')
+@app.route('/details/<name>')
 def details(name):
     data = {
+        # Anime
         "Naruto": {
             "title": "Naruto",
             "genre": "Action • Adventure",
@@ -926,6 +928,58 @@ def details(name):
             "genre": "Action • Horror",
             "img": "https://cdn.myanimelist.net/images/anime/5/64449.jpg",
             "description": "Ken Kaneki is transformed into a half-ghoul after an encounter with one, and must learn to live between two worlds."
+        },
+
+        # Manga
+        "One Piece Manga": {
+            "title": "One Piece (Manga)",
+            "genre": "Adventure • Fantasy",
+            "img": "https://cdn.myanimelist.net/images/manga/3/55539.jpg",
+            "description": "The manga follows Monkey D. Luffy and his pirate crew in their quest to find the legendary treasure One Piece."
+        },
+        "Naruto Manga": {
+            "title": "Naruto (Manga)",
+            "genre": "Action • Adventure",
+            "img": "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
+            "description": "The story of Naruto Uzumaki, a young ninja who dreams of becoming the strongest ninja and leader of his village."
+        },
+        "Attack on Titan Manga": {
+            "title": "Attack on Titan (Manga)",
+            "genre": "Action • Drama",
+            "img": "https://cdn.myanimelist.net/images/manga/3/180031.jpg",
+            "description": "Humanity's fight for survival against the giant humanoid Titans that threaten their existence."
+        },
+        "Death Note Manga": {
+            "title": "Death Note (Manga)",
+            "genre": "Mystery • Thriller",
+            "img": "https://cdn.myanimelist.net/images/manga/1/157931.jpg",
+            "description": "A psychological thriller about a notebook that can kill anyone whose name is written in it."
+        },
+
+        # Manhwa
+        "Solo Leveling": {
+            "title": "Solo Leveling",
+            "genre": "Action • Fantasy",
+            "img": "https://cdn.myanimelist.net/images/manga/3/218851.jpg",
+            "description": "Sung Jin-Woo, the weakest hunter, gains a mysterious power that allows him to level up and become the strongest."
+        },
+        "Tower of God": {
+            "title": "Tower of God",
+            "genre": "Action • Adventure",
+            "img": "https://cdn.myanimelist.net/images/manga/1/157897.jpg",
+            "description": "A boy named Twenty-Fifth Bam enters the Tower to find his friend Rachel, facing deadly challenges along the way."
+        },
+        "The God of High School": {
+            "title": "The God of High School",
+            "genre": "Action • Martial Arts",
+            "img": "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
+            "description": "High school students compete in a fighting tournament that holds a greater secret about gods and power."
+        },
+        "Noblesse": {
+            "title": "Noblesse",
+            "genre": "Action • Supernatural",
+            "img": "https://cdn.myanimelist.net/images/manga/3/180031.jpg",
+            "description": "A powerful noble from a long-lost clan awakens in the modern world and protects his new friends."
         }
     }
 
@@ -993,7 +1047,7 @@ def details(name):
                     <h1 style="color:#e94560;">{item['title']}</h1>
                     <p class="text-secondary mb-3">{item['genre']}</p>
                     <p style="font-size:1.1rem; line-height:1.7;">{item['description']}</p>
-                    <a href="/anime" class="btn btn-outline-light mt-3">← Back to Anime</a>
+                    <a href="/anime" class="btn btn-outline-light mt-3">← Back</a>
                 </div>
             </div>
         </div>
