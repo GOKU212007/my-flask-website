@@ -866,3 +866,140 @@ def search():
     </body>
     </html>
     """
+@app.route('/details/<name>')
+def details(name):
+    data = {
+        "Naruto": {
+            "title": "Naruto",
+            "genre": "Action • Adventure",
+            "img": "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+            "description": "Naruto Uzumaki is a young ninja who seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village."
+        },
+        "One Piece": {
+            "title": "One Piece",
+            "genre": "Adventure • Fantasy",
+            "img": "https://cdn.myanimelist.net/images/anime/6/73245.jpg",
+            "description": "Monkey D. Luffy sets off on an adventure with his pirate crew in search of the One Piece, the greatest treasure in the world."
+        },
+        "Demon Slayer": {
+            "title": "Demon Slayer",
+            "genre": "Action • Supernatural",
+            "img": "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+            "description": "Tanjiro Kamado becomes a demon slayer after his family is slaughtered and his sister is turned into a demon."
+        },
+        "Jujutsu Kaisen": {
+            "title": "Jujutsu Kaisen",
+            "genre": "Action • Dark Fantasy",
+            "img": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
+            "description": "Yuji Itadori joins a secret organization of Jujutsu Sorcerers to eliminate a powerful Curse named Ryomen Sukuna."
+        },
+        "Attack on Titan": {
+            "title": "Attack on Titan",
+            "genre": "Action • Drama",
+            "img": "https://cdn.myanimelist.net/images/anime/5/73199.jpg",
+            "description": "Humanity lives inside cities surrounded by enormous walls due to the Titans, gigantic humanoid creatures who devour humans."
+        },
+        "Death Note": {
+            "title": "Death Note",
+            "genre": "Mystery • Thriller",
+            "img": "https://cdn.myanimelist.net/images/anime/9/9453.jpg",
+            "description": "A high school student discovers a supernatural notebook that allows him to kill anyone by writing the victim's name."
+        },
+        "Hunter x Hunter": {
+            "title": "Hunter x Hunter",
+            "genre": "Adventure • Fantasy",
+            "img": "https://cdn.myanimelist.net/images/anime/1337/99013.jpg",
+            "description": "Gon Freecss aspires to become a Hunter like his father and embarks on a journey full of challenges and friends."
+        },
+        "Tokyo Ghoul": {
+            "title": "Tokyo Ghoul",
+            "genre": "Action • Horror",
+            "img": "https://cdn.myanimelist.net/images/anime/5/64449.jpg",
+            "description": "Ken Kaneki is transformed into a half-ghoul after an encounter with one, and must learn to live between two worlds."
+        }
+    }
+
+    item = data.get(name, {
+        "title": name,
+        "genre": "Unknown",
+        "img": "https://via.placeholder.com/300x400?text=No+Image",
+        "description": "Details not available."
+    })
+
+    return f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>{item['title']} - AnimeHub</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {{
+                background-color: #0b0b13;
+                color: white;
+                font-family: 'Segoe UI', sans-serif;
+            }}
+            .navbar {{
+                background-color: #12121f !important;
+            }}
+            .detail-img {{
+                max-height: 450px;
+                border-radius: 12px;
+                object-fit: cover;
+            }}
+            footer {{
+                background-color: #12121f;
+                padding: 30px 0;
+                margin-top: 60px;
+                text-align: center;
+                color: #aaa;
+                font-size: 0.9rem;
+            }}
+            footer a {{
+                color: #e94560;
+                text-decoration: none;
+                margin: 0 10px;
+            }}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="/">AnimeHub</a>
+                <div class="d-flex gap-3">
+                    <a class="nav-link text-white" href="/">Home</a>
+                    <a class="nav-link text-white" href="/anime">Anime</a>
+                    <a class="nav-link text-white" href="/manga">Manga</a>
+                    <a class="nav-link text-white" href="/manhwa">Manhwa</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4">
+                    <img src="{item['img']}" class="detail-img img-fluid" alt="{item['title']}">
+                </div>
+                <div class="col-md-8">
+                    <h1 style="color:#e94560;">{item['title']}</h1>
+                    <p class="text-secondary mb-3">{item['genre']}</p>
+                    <p style="font-size:1.1rem; line-height:1.7;">{item['description']}</p>
+                    <a href="/anime" class="btn btn-outline-light mt-3">← Back to Anime</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p class="mb-2">© 2026 AnimeHub. All rights reserved.</p>
+                <div>
+                    <a href="/">Home</a>
+                    <a href="/anime">Anime</a>
+                    <a href="/manga">Manga</a>
+                    <a href="/manhwa">Manhwa</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>
+    """
