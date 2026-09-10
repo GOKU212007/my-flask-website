@@ -513,6 +513,7 @@ def manga():
     """
 
 @app.route('/manhwa')
+@app.route('/manhwa')
 def manhwa():
     return """
     <!DOCTYPE html>
@@ -521,14 +522,55 @@ def manhwa():
         <title>Manhwa - AnimeHub</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body { background-color: #0b0b13; color: white; font-family: 'Segoe UI', sans-serif; }
-            .navbar { background-color: #12121f !important; }
-            .manhwa-card { background-color: #16162a; border-radius: 14px; overflow: hidden; transition: 0.3s; height: 100%; }
-            .manhwa-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(233,69,96,0.3); }
-            .manhwa-img { height: 320px; width: 100%; object-fit: cover; }
-            .manhwa-info { padding: 16px; }
-            .manhwa-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
-            .manhwa-genre { font-size: 0.85rem; color: #aaa; }
+            body {
+                background-color: #0b0b13;
+                color: white;
+                font-family: 'Segoe UI', sans-serif;
+            }
+            .navbar {
+                background-color: #12121f !important;
+            }
+            .manhwa-card {
+                background-color: #16162a;
+                border-radius: 14px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                height: 100%;
+            }
+            .manhwa-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
+            }
+            .manhwa-img {
+                height: 320px;
+                width: 100%;
+                object-fit: cover;
+            }
+            .manhwa-info {
+                padding: 16px;
+            }
+            .manhwa-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+            .manhwa-genre {
+                font-size: 0.85rem;
+                color: #aaa;
+            }
+            footer {
+                background-color: #12121f;
+                padding: 30px 0;
+                margin-top: 60px;
+                text-align: center;
+                color: #aaa;
+                font-size: 0.9rem;
+            }
+            footer a {
+                color: #e94560;
+                text-decoration: none;
+                margin: 0 10px;
+            }
         </style>
     </head>
     <body>
@@ -545,7 +587,8 @@ def manhwa():
         </nav>
 
         <div class="container my-5">
-            <h1 class="text-center mb-5" style="color:#e94560; font-weight:700;">Popular Manhwa</h1>
+            <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Manhwa</h1>
+            
             <div class="row g-4">
                 <div class="col-6 col-md-3">
                     <div class="manhwa-card">
@@ -585,6 +628,19 @@ def manhwa():
                 </div>
             </div>
         </div>
+
+        <footer>
+            <div class="container">
+                <p class="mb-2">© 2026 AnimeHub. All rights reserved.</p>
+                <div>
+                    <a href="/">Home</a>
+                    <a href="/anime">Anime</a>
+                    <a href="/manga">Manga</a>
+                    <a href="/manhwa">Manhwa</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </footer>
     </body>
     </html>
     """
