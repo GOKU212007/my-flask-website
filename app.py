@@ -211,6 +211,7 @@ def home():
     """
 @app.route('/anime')
 @app.route('/anime')
+@app.route('/anime')
 def anime():
     return """
     <!DOCTYPE html>
@@ -255,6 +256,19 @@ def anime():
                 font-size: 0.85rem;
                 color: #aaa;
             }
+            footer {
+                background-color: #12121f;
+                padding: 30px 0;
+                margin-top: 60px;
+                text-align: center;
+                color: #aaa;
+                font-size: 0.9rem;
+            }
+            footer a {
+                color: #e94560;
+                text-decoration: none;
+                margin: 0 10px;
+            }
         </style>
     </head>
     <body>
@@ -274,7 +288,6 @@ def anime():
             <h1 class="text-center mb-5" style="color: #e94560; font-weight: 700;">Popular Anime</h1>
             
             <div class="row g-4">
-
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="anime-img" alt="Naruto">
@@ -284,7 +297,6 @@ def anime():
                         </div>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg" class="anime-img" alt="One Piece">
@@ -294,7 +306,6 @@ def anime():
                         </div>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" class="anime-img" alt="DemonSlayer">
@@ -304,7 +315,6 @@ def anime():
                         </div>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" class="anime-img" alt="Jujutsu Kaisen">
@@ -314,17 +324,15 @@ def anime():
                         </div>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
-                        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="anime-img" alt="Attack on Titan">
+                        <img src="https://cdn.myanimelist.net/images/anime/5/73199.jpg" class="anime-img" alt="Attack on Titan">
                         <div class="anime-info">
                             <div class="anime-title">Attack on Titan</div>
                             <div class="anime-genre">Action • Drama</div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/9/9453.jpg" class="anime-img" alt="Death Note">
@@ -334,7 +342,6 @@ def anime():
                         </div>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1337/99013.jpg" class="anime-img" alt="Hunter x Hunter">
@@ -344,7 +351,6 @@ def anime():
                         </div>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <div class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/5/64449.jpg" class="anime-img" alt="Tokyo Ghoul">
@@ -354,9 +360,21 @@ def anime():
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
+
+        <footer>
+            <div class="container">
+                <p class="mb-2">© 2026 AnimeHub. All rights reserved.</p>
+                <div>
+                    <a href="/">Home</a>
+                    <a href="/anime">Anime</a>
+                    <a href="/manga">Manga</a>
+                    <a href="/manhwa">Manhwa</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </footer>
     </body>
     </html>
     """
