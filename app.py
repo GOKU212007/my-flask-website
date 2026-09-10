@@ -872,7 +872,7 @@ def details(name):
         "Naruto": {
             "title": "Naruto",
             "genre": "Action • Adventure",
-            "img": "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+            "img": "https://cdn.myanimelist.net/images/anime/13/17405.jpg",
             "description": "Naruto Uzumaki is a young ninja who seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village."
         },
         "One Piece": {
@@ -896,7 +896,7 @@ def details(name):
         "Attack on Titan": {
             "title": "Attack on Titan",
             "genre": "Action • Drama",
-            "img": "https://cdn.myanimelist.net/images/anime/5/73199.jpg",
+            "img": "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
             "description": "Humanity lives inside cities surrounded by enormous walls due to the Titans, gigantic humanoid creatures who devour humans."
         },
         "Death Note": {
