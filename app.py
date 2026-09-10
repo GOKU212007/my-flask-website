@@ -212,6 +212,7 @@ def home():
 @app.route('/anime')
 @app.route('/anime')
 @app.route('/anime')
+@app.route('/anime')
 def anime():
     return """
     <!DOCTYPE html>
@@ -234,10 +235,14 @@ def anime():
                 overflow: hidden;
                 transition: all 0.3s ease;
                 height: 100%;
+                text-decoration: none;
+                color: white;
+                display: block;
             }
             .anime-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
+                color: white;
             }
             .anime-img {
                 height: 320px;
@@ -289,76 +294,76 @@ def anime():
             
             <div class="row g-4">
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
+                    <a href="/details/Naruto" class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="anime-img" alt="Naruto">
                         <div class="anime-info">
                             <div class="anime-title">Naruto</div>
                             <div class="anime-genre">Action • Adventure</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
+                    <a href="/details/One Piece" class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg" class="anime-img" alt="One Piece">
                         <div class="anime-info">
                             <div class="anime-title">One Piece</div>
                             <div class="anime-genre">Adventure • Fantasy</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
+                    <a href="/details/Demon Slayer" class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" class="anime-img" alt="DemonSlayer">
                         <div class="anime-info">
                             <div class="anime-title">DemonSlayer</div>
                             <div class="anime-genre">Action • Supernatural</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
+                    <a href="/details/Jujutsu Kaisen" class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" class="anime-img" alt="Jujutsu Kaisen">
                         <div class="anime-info">
                             <div class="anime-title">Jujutsu Kaisen</div>
                             <div class="anime-genre">Action • Dark Fantasy</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
+                    <a href="/details/Attack on Titan" class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/5/73199.jpg" class="anime-img" alt="Attack on Titan">
                         <div class="anime-info">
                             <div class="anime-title">Attack on Titan</div>
                             <div class="anime-genre">Action • Drama</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
+                    <a href="/details/Death Note" class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/9/9453.jpg" class="anime-img" alt="Death Note">
                         <div class="anime-info">
                             <div class="anime-title">Death Note</div>
                             <div class="anime-genre">Mystery • Thriller</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
+                    <a href="/details/Hunter x Hunter" class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1337/99013.jpg" class="anime-img" alt="Hunter x Hunter">
                         <div class="anime-info">
                             <div class="anime-title">Hunter x Hunter</div>
                             <div class="anime-genre">Adventure • Fantasy</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="anime-card">
+                    <a href="/details/Tokyo Ghoul" class="anime-card">
                         <img src="https://cdn.myanimelist.net/images/anime/5/64449.jpg" class="anime-img" alt="Tokyo Ghoul">
                         <div class="anime-info">
                             <div class="anime-title">Tokyo Ghoul</div>
                             <div class="anime-genre">Action • Horror</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -378,7 +383,6 @@ def anime():
     </body>
     </html>
     """
-
 @app.route('/manga')
 @app.route('/manga')
 def manga():
