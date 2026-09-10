@@ -385,6 +385,7 @@ def anime():
     """
 @app.route('/manga')
 @app.route('/manga')
+@app.route('/manga')
 def manga():
     return """
     <!DOCTYPE html>
@@ -407,10 +408,14 @@ def manga():
                 overflow: hidden;
                 transition: all 0.3s ease;
                 height: 100%;
+                text-decoration: none;
+                color: white;
+                display: block;
             }
             .manga-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 30px rgba(233, 69, 96, 0.3);
+                color: white;
             }
             .manga-img {
                 height: 320px;
@@ -462,40 +467,40 @@ def manga():
             
             <div class="row g-4">
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
+                    <a href="/details/One Piece Manga" class="manga-card">
                         <img src="https://cdn.myanimelist.net/images/manga/3/55539.jpg" class="manga-img" alt="One Piece">
                         <div class="manga-info">
                             <div class="manga-title">One Piece</div>
                             <div class="manga-genre">Adventure • Fantasy</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
+                    <a href="/details/Naruto Manga" class="manga-card">
                         <img src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" class="manga-img" alt="Naruto">
                         <div class="manga-info">
                             <div class="manga-title">Naruto</div>
                             <div class="manga-genre">Action • Adventure</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
+                    <a href="/details/Attack on Titan Manga" class="manga-card">
                         <img src="https://cdn.myanimelist.net/images/manga/3/180031.jpg" class="manga-img" alt="Attack on Titan">
                         <div class="manga-info">
                             <div class="manga-title">Attack on Titan</div>
                             <div class="manga-genre">Action • Drama</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="manga-card">
+                    <a href="/details/Death Note Manga" class="manga-card">
                         <img src="https://cdn.myanimelist.net/images/manga/1/157931.jpg" class="manga-img" alt="Death Note">
                         <div class="manga-info">
                             <div class="manga-title">Death Note</div>
                             <div class="manga-genre">Mystery • Thriller</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
