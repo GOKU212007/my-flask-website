@@ -879,20 +879,20 @@ def search():
 @app.route('/details/<name>')
 @app.route('/details/<name>')
 @app.route('/details/<name>')
+@app.route('/details/<name>')
 def details(name):
     data = {
-        # Anime
         "Naruto": {
             "title": "Naruto",
             "genre": "Action • Adventure",
             "img": "https://cdn.myanimelist.net/images/anime/13/17405.jpg",
-            "description": "Naruto Uzumaki is a young ninja who seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village."
+            "description": "Naruto Uzumaki is a young ninja who seeks recognition from his peers and dreams of becoming the Hokage."
         },
         "One Piece": {
             "title": "One Piece",
             "genre": "Adventure • Fantasy",
             "img": "https://cdn.myanimelist.net/images/anime/6/73245.jpg",
-            "description": "Monkey D. Luffy sets off on an adventure with his pirate crew in search of the One Piece, the greatest treasure in the world."
+            "description": "Monkey D. Luffy sets off on an adventure with his pirate crew in search of the One Piece."
         },
         "Demon Slayer": {
             "title": "Demon Slayer",
@@ -904,34 +904,32 @@ def details(name):
             "title": "Jujutsu Kaisen",
             "genre": "Action • Dark Fantasy",
             "img": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
-            "description": "Yuji Itadori joins a secret organization of Jujutsu Sorcerers to eliminate a powerful Curse named Ryomen Sukuna."
+            "description": "Yuji Itadori joins a secret organization of Jujutsu Sorcerers to eliminate powerful Curses."
         },
         "Attack on Titan": {
             "title": "Attack on Titan",
             "genre": "Action • Drama",
             "img": "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
-            "description": "Humanity lives inside cities surrounded by enormous walls due to the Titans, gigantic humanoid creatures who devour humans."
+            "description": "Humanity lives inside cities surrounded by enormous walls due to the Titans."
         },
         "Death Note": {
             "title": "Death Note",
             "genre": "Mystery • Thriller",
             "img": "https://cdn.myanimelist.net/images/anime/9/9453.jpg",
-            "description": "A high school student discovers a supernatural notebook that allows him to kill anyone by writing the victim's name."
+            "description": "A high school student discovers a supernatural notebook that allows him to kill anyone by writing their name."
         },
         "Hunter x Hunter": {
             "title": "Hunter x Hunter",
             "genre": "Adventure • Fantasy",
             "img": "https://cdn.myanimelist.net/images/anime/1337/99013.jpg",
-            "description": "Gon Freecss aspires to become a Hunter like his father and embarks on a journey full of challenges and friends."
+            "description": "Gon Freecss aspires to become a Hunter like his father and embarks on a journey full of challenges."
         },
         "Tokyo Ghoul": {
             "title": "Tokyo Ghoul",
             "genre": "Action • Horror",
             "img": "https://cdn.myanimelist.net/images/anime/5/64449.jpg",
-            "description": "Ken Kaneki is transformed into a half-ghoul after an encounter with one, and must learn to live between two worlds."
+            "description": "Ken Kaneki is transformed into a half-ghoul and must learn to live between two worlds."
         },
-
-        # Manga
         "One Piece Manga": {
             "title": "One Piece (Manga)",
             "genre": "Adventure • Fantasy",
@@ -942,13 +940,13 @@ def details(name):
             "title": "Naruto (Manga)",
             "genre": "Action • Adventure",
             "img": "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
-            "description": "The story of Naruto Uzumaki, a young ninja who dreams of becoming the strongest ninja and leader of his village."
+            "description": "The story of Naruto Uzumaki, a young ninja who dreams of becoming the strongest ninja."
         },
         "Attack on Titan Manga": {
             "title": "Attack on Titan (Manga)",
             "genre": "Action • Drama",
             "img": "https://cdn.myanimelist.net/images/manga/3/180031.jpg",
-            "description": "Humanity's fight for survival against the giant humanoid Titans that threaten their existence."
+            "description": "Humanity's fight for survival against the giant humanoid Titans."
         },
         "Death Note Manga": {
             "title": "Death Note (Manga)",
@@ -956,8 +954,6 @@ def details(name):
             "img": "https://cdn.myanimelist.net/images/manga/1/157931.jpg",
             "description": "A psychological thriller about a notebook that can kill anyone whose name is written in it."
         },
-
-        # Manhwa
         "Solo Leveling": {
             "title": "Solo Leveling",
             "genre": "Action • Fantasy",
@@ -968,13 +964,13 @@ def details(name):
             "title": "Tower of God",
             "genre": "Action • Adventure",
             "img": "https://cdn.myanimelist.net/images/manga/1/157897.jpg",
-            "description": "A boy named Twenty-Fifth Bam enters the Tower to find his friend Rachel, facing deadly challenges along the way."
+            "description": "A boy named Twenty-Fifth Bam enters the Tower to find his friend Rachel."
         },
         "The God of High School": {
             "title": "The God of High School",
             "genre": "Action • Martial Arts",
             "img": "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
-            "description": "High school students compete in a fighting tournament that holds a greater secret about gods and power."
+            "description": "High school students compete in a fighting tournament that holds a greater secret."
         },
         "Noblesse": {
             "title": "Noblesse",
@@ -1035,6 +1031,7 @@ def details(name):
                     <a class="nav-link text-white" href="/anime">Anime</a>
                     <a class="nav-link text-white" href="/manga">Manga</a>
                     <a class="nav-link text-white" href="/manhwa">Manhwa</a>
+                    <a class="nav-link text-white" href="/favorites">Favorites</a>
                 </div>
             </div>
         </nav>
@@ -1048,7 +1045,13 @@ def details(name):
                     <h1 style="color:#e94560;">{item['title']}</h1>
                     <p class="text-secondary mb-3">{item['genre']}</p>
                     <p style="font-size:1.1rem; line-height:1.7;">{item['description']}</p>
-                    <a href="/anime" class="btn btn-outline-light mt-3">← Back</a>
+                    
+                    <form action="/add_favorite" method="POST" class="mt-3">
+                        <input type="hidden" name="title" value="{item['title']}">
+                        <input type="hidden" name="genre" value="{item['genre']}">
+                        <button type="submit" class="btn btn-danger me-2">❤️ Add to Favorites</button>
+                        <a href="/anime" class="btn btn-outline-light">← Back</a>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1061,7 +1064,7 @@ def details(name):
                     <a href="/anime">Anime</a>
                     <a href="/manga">Manga</a>
                     <a href="/manhwa">Manhwa</a>
-                    <a href="/contact">Contact</a>
+                    <a href="/favorites">Favorites</a>
                 </div>
             </div>
         </footer>
