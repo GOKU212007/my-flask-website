@@ -1071,3 +1071,107 @@ def details(name):
     </body>
     </html>
     """
+@app.route('/add_favorite', methods=['POST'])
+def add_favorite():
+    if 'favorites' not in session:
+        session['favorites'] = []
+    
+    title = request.form.get('title')
+    genre = request.form.get('genre')
+    
+    # Avoid duplicates
+    for item in session['favorites']:
+        if item['title'] == title:
+            return redirect(url_for('favorites'))
+    
+    session['favorites'].append({
+        'title': title,
+        'genre': genre
+    })
+    session.modified = True
+    
+    return redirect(url_for('favorites'))
+
+@app.route('/favorites')
+def favorites():
+    favs = session.get('favorites', [])
+    
+    favs_html = ""
+    if favs:
+        for item in favs:
+            favs_html += f"""
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#e94560;">{item['title']}</h5>
+                        <p class="card-text text-secondary">{item['genre']}</p>
+                    </div>
+                </div>
+            </div>
+            """
+    else:
+        favs_html = "<p class='text-center text-secondary'>No favorites yet. Go add some!</p>"
+
+    return f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Favorites - AnimeHub</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {{ background-color: #0b0b13; color: white; font-family: 'Segoe UI', sans-serif; }}
+            .navbar {{ background-color: #12121f !important; }}
+            footer {{
+                background-color: #12121f;
+                padding: 30px 0;
+                margin-top: 60px;
+                text-align: center;
+                color: #aaa;
+                font-size: 0.9rem;
+            }}
+            footer a {{
+                color: #e94560;
+                text-decoration: none;
+                margin: 0 10px;
+            }}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="/">AnimeHub</a>
+                <div class="d-flex gap-3">
+                    <a class="nav-link text-white" href="/">Home</a>
+                    <a class="nav-link text-white" href="/anime">Anime</a>
+                    <a class="nav-link text-white" href="/manga">Manga</a>
+                    <a class="nav-link text-white" href="/manhwa">Manhwa</a>
+                    <a class="nav-link text-white" href="/favorites">Favorites</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container my-5">
+            <h1 class="text-center mb-5" style="color:#e94560;">My Favorites</h1>
+            <div class="row">
+                {favs_html}
+            </div>
+            <div class="text-center mt-4">
+                <a href="/anime" class="btn btn-outline-light">← Back to Anime</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p class="mb-2">© 2026 AnimeHub. All rights reserved.</p>
+                <div>
+                    <a href="/">Home</a>
+                    <a href="/anime">Anime</a>
+                    <a href="/manga">Manga</a>
+                    <a href="/manhwa">Manhwa</a>
+                    <a href="/favorites">Favorites</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>
+    """
