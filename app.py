@@ -1175,3 +1175,88 @@ def favorites():
     </body>
     </html>
     """
+@app.route('/about')
+def about():
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>About - AnimeHub</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                background-color: #0b0b13;
+                color: white;
+                font-family: 'Segoe UI', sans-serif;
+            }
+            .navbar {
+                background-color: #12121f !important;
+            }
+            footer {
+                background-color: #12121f;
+                padding: 30px 0;
+                margin-top: 60px;
+                text-align: center;
+                color: #aaa;
+                font-size: 0.9rem;
+            }
+            footer a {
+                color: #e94560;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="/">AnimeHub</a>
+                <div class="d-flex gap-3">
+                    <a class="nav-link text-white" href="/">Home</a>
+                    <a class="nav-link text-white" href="/anime">Anime</a>
+                    <a class="nav-link text-white" href="/manga">Manga</a>
+                    <a class="nav-link text-white" href="/manhwa">Manhwa</a>
+                    <a class="nav-link text-white" href="/favorites">Favorites</a>
+                    <a class="nav-link text-white" href="/about">About</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="text-center mb-4" style="color:#e94560;">About AnimeHub</h1>
+                    <p style="font-size:1.1rem; line-height:1.8;">
+                        AnimeHub is a simple and clean website made for anime, manga, and manhwa lovers.
+                        Here you can explore popular titles, search your favorite series, view details, and save them to your favorites list.
+                    </p>
+                    <p style="font-size:1.1rem; line-height:1.8;">
+                        This website was built using Python and Flask as a learning project.
+                        The goal is to create a beautiful and easy-to-use platform for discovering great stories.
+                    </p>
+                    <p style="font-size:1.1rem; line-height:1.8;">
+                        Thank you for visiting AnimeHub!
+                    </p>
+                    <div class="text-center mt-4">
+                        <a href="/" class="btn btn-danger">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p class="mb-2">© 2026 AnimeHub. All rights reserved.</p>
+                <div>
+                    <a href="/">Home</a>
+                    <a href="/anime">Anime</a>
+                    <a href="/manga">Manga</a>
+                    <a href="/manhwa">Manhwa</a>
+                    <a href="/favorites">Favorites</a>
+                    <a href="/about">About</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>
+    """
