@@ -878,6 +878,7 @@ def search():
     """
 @app.route('/details/<name>')
 @app.route('/details/<name>')
+@app.route('/details/<name>')
 def details(name):
     data = {
         # Anime
@@ -960,7 +961,7 @@ def details(name):
         "Solo Leveling": {
             "title": "Solo Leveling",
             "genre": "Action • Fantasy",
-            "img": "https://cdn.myanimelist.net/images/manga/3/218851.jpg",
+            "img": "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
             "description": "Sung Jin-Woo, the weakest hunter, gains a mysterious power that allows him to level up and become the strongest."
         },
         "Tower of God": {
