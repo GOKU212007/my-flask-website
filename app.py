@@ -1181,3 +1181,17 @@ def favorites():
     </body>
     </html>
     """
+@app.route('/remove_favorite', methods=['POST'])
+def remove_favorite():
+    index = request.form.get('index')
+    
+    if 'favorites' in session and index is not None:
+        try:
+            index = int(index)
+            if 0 <= index < len(session['favorites']):
+                session['favorites'].pop(index)
+                session.modified = True
+        except:
+            pass
+    
+    return redirect(url_for('favorites'))
