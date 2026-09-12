@@ -1093,7 +1093,6 @@ def add_favorite():
     return redirect(url_for('favorites'))
 
 @app.route('/favorites')
-@app.route('/favorites')
 def favorites():
     favs = session.get('favorites', [])
     
